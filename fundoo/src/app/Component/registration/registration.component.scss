@@ -1,6 +1,6 @@
 .main-container{
 display: flex;
-
+justify-content: center;
 }
 form{
     box-sizing: border-box;
@@ -10,7 +10,8 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1cm 7cm 3cm 8cm;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
 }
 // LOGO
 .logo{
