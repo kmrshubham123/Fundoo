@@ -16,11 +16,13 @@
         <div class="fullname">
             <mat-form-field appearance="outline" class="first_name">
                 <mat-label>First name</mat-label>
-                <input matInput placeholder="First name">
+                <input matInput formControlName="firstName" placeholder="First name">
+                <mat-error>First name Is Required</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="last_name">
                 <mat-label>Last name</mat-label>
-                <input matInput placeholder="Last name">
+                <input matInput formControlName="lastName" placeholder="Last name">
+                <mat-error>Last name Is Required</mat-error>
             </mat-form-field>
         </div>
         <div class="Section-2">
@@ -28,6 +30,8 @@
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="email" placeholder="Username">
                 <mat-hint>You can use letters,numbers & periods</mat-hint>
+                <mat-error>Email Required</mat-error>
+
             </mat-form-field>
         </div>
 
@@ -37,14 +41,13 @@
         <div class="Password-Confirm">
             <mat-form-field appearance="outline" class="Password">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password">
-
+                <input matInput formControlName="password" placeholder="Password">
+                <mat-error>Password required</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="Confirm">
                 <mat-label>Confirm</mat-label>
-                <input matInput placeholder="Confirm">
-
+                <input matInput formControlName="confirmPassword" placeholder="Confirm">
             </mat-form-field>
 
         </div>

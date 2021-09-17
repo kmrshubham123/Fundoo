@@ -10,9 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -27,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatInputModule,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,FormsModule,FlexLayoutModule
 
   ],
   providers: [],
