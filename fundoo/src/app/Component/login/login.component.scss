@@ -11,6 +11,7 @@ form{
     justify-content: center;
     padding: 1cm;
     margin-top: 1cm ;
+    margin-bottom: 1cm;
 }
 .logo{
     margin-top: 0.5cm;
@@ -71,7 +72,7 @@ form{
     padding-left: 0cm;
 }
 
-.forgotBtn a, .forgotBtn2 a{
+.forgotBtn a, .resetBtn2 a{
     color:#1A73E8;
     margin-top: 0cm;
     background-color: white;
@@ -79,6 +80,7 @@ form{
     font-weight: 600;
     font-size: 15px;
     font-family: Arial;
+    text-decoration: none;
 }
 .para2{
     margin-top: 1.5cm;
@@ -97,7 +99,7 @@ form{
     display: flex;
     justify-content: space-between;
     width: 10cm;
-    margin-bottom: 1cm;
+    margin-bottom: 0.5cm;
 }
 .footer-button .mat-button{
 background-color: white;
