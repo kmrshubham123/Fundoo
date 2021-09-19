@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
+import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.component';
 
 
 
@@ -20,7 +21,8 @@ import { ForgotPasswordComponent } from './Component/forgot-password/forgot-pass
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetpasswordComponent
 
   ],
   imports: [
