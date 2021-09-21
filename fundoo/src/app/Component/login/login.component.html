@@ -29,9 +29,12 @@
         <div class="Form-bar2">
             <mat-form-field appearance="outline" class="PasswordForgot">
                 <mat-label>Password</mat-label>
-                <input matInput formControlName="password" placeholder="Password">
+                <input type="password" matInput formControlName="password" placeholder="Password">
                 <mat-error>Password required</mat-error>
             </mat-form-field>
+            <div class="checkbox">
+                <mat-checkbox class="box">Show Password</mat-checkbox>
+            </div>
         </div>
 
         <div class="resetBtn2">
@@ -43,7 +46,7 @@
         </div>
         <div class=" footer-button">
             <button mat-button class="creatbtn" routerLink="/registration">Create account</button>
-            <button mat-raised-button class="Submitbtn">Submit</button>
+            <button (click)="onSubmit()" mat-raised-button class="Submitbtn">Submit</button>
         </div>
     </form>
 </div>
