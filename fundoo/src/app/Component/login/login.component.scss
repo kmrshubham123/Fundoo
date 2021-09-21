@@ -1,79 +1,94 @@
-.mainContainer{
+.mainContainer {
     display: flex;
     justify-content: center;
 }
-form{
+
+form {
     box-sizing: border-box;
-    border:rgba(128, 128, 128, 0.699) 0.5px solid;
+    border: rgba(128, 128, 128, 0.699) 0.5px solid;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1cm;
-    margin-top: 1cm ;
+    margin-top: 1cm;
     margin-bottom: 1cm;
 }
-.logo{
+
+.logo {
     margin-top: 0.5cm;
-    font-family:monospace;
+    font-family: monospace;
     font-size: 26px;
-    font-weight:700;
+    font-weight: 700;
     display: flex;
     justify-content: center;
 
 }
-.logo .L1{
-    color:#1A73E8;
+
+.logo .L1 {
+    color: #1A73E8;
 }
-.logo .L2{
+
+.logo .L2 {
     color: red;
 }
-.logo .L3{
+
+.logo .L3 {
     color: yellow;
 }
-.logo .L4{
-    color:#1A73E8;
+
+.logo .L4 {
+    color: #1A73E8;
 }
-.logo .L5{
+
+.logo .L5 {
     color: green;
 }
-.logo .L6{
+
+.logo .L6 {
     color: red;
 }
-.heading{
+
+.heading {
     margin-top: 1cm;
     display: flex;
     justify-content: center;
 }
-.sign-in{
+
+.sign-in {
     font-size: 25px;
     font-family: Arial;
     font-weight: 100;
 }
-.Account{
+
+.Account {
     margin-top: 0.7cm;
     display: flex;
     justify-content: center;
 }
-.Para1{
+
+.Para1 {
     font-size: 18px;
     font-family: Arial;
     font-weight: 70;
 
 }
-.Email-phone{
-    margin-top: 0.5cm;
-    width: 11cm;
-    padding-left: 0cm;
-}
-.PasswordForgot{
+
+.Email-phone {
     margin-top: 0.5cm;
     width: 11cm;
     padding-left: 0cm;
 }
 
-.forgotBtn a, .resetBtn2 a{
-    color:#1A73E8;
+.PasswordForgot {
+    margin-top: 0.5cm;
+    width: 11cm;
+    padding-left: 0cm;
+}
+
+.forgotBtn a,
+.resetBtn2 a {
+    color: #1A73E8;
     margin-top: 0cm;
     background-color: white;
     padding-left: 0%;
@@ -82,40 +97,51 @@ form{
     font-family: Arial;
     text-decoration: none;
 }
-.para2{
+
+.para2 {
     margin-top: 1.5cm;
     color: gray;
     font-size: 15px;
 }
-.para2 a{
-text-decoration: none;
+
+.para2 a {
+    text-decoration: none;
 }
+<<<<<<< HEAD
 .checkbox{
     margin-bottom:0.5cm ;
+=======
+
+.checkbox {
+    margin-bottom: 0.5cm;
+>>>>>>> User_API_Integration
 }
 
-.learn{
-    color:#1A73E8;
-   font-weight: 600;
-   font-size: 15px;
-   font-family: Arial;
+.learn {
+    color: #1A73E8;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: Arial;
 }
-.footer-button{
+
+.footer-button {
     margin-top: 1cm;
     display: flex;
     justify-content: space-between;
     width: 10cm;
     margin-bottom: 0.5cm;
 }
-.footer-button .mat-button{
-background-color: white;
-color:#1A73E8;
-font-weight: 600;
-font-size: 15px;
-font-family: Arial;
-padding-left: 0cm;
+
+.footer-button .mat-button {
+    background-color: white;
+    color: #1A73E8;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: Arial;
+    padding-left: 0cm;
 }
-.footer-button .Submitbtn{
+
+.footer-button .Submitbtn {
     background-color: #1A73E8;
     color: white;
 }

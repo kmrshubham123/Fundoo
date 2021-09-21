@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
@@ -19,7 +20,11 @@ token:any
     let httpAuthOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+<<<<<<< HEAD
         
+=======
+        'Authorization': this.token
+>>>>>>> User_API_Integration
        
       })
     };

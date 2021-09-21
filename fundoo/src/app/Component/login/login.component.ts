@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/userService/user.service';
+<<<<<<< HEAD
+=======
+import { MatSnackBar } from '@angular/material/snack-bar';
+>>>>>>> User_API_Integration
 
 @Component({
   selector: 'app-login',
@@ -9,14 +13,18 @@ import { UserService } from '../../services/userService/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm! : FormGroup;
+  loginForm!: FormGroup;
 
 
+<<<<<<< HEAD
   constructor(private formBuilder: FormBuilder , private userService : UserService) { }
+=======
+  constructor(private formBuilder: FormBuilder, private userService: UserService,private matSnackBar:MatSnackBar) { }
+>>>>>>> User_API_Integration
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
- 
+
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
 
@@ -38,6 +46,33 @@ export class LoginComponent implements OnInit {
 
     },(error:any) =>{
       console.log(error)
+
+    })
+  }
+
+  onSubmit() {
+    console.log("onsubmit function is calling", this.loginForm.value);
+    let request = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+
+    }
+    console.log(request)
+    this.userService.loginUser(request).subscribe((response: any) => {
+      console.log(response)
+
+      this.matSnackBar.open("Login Successful ", ' ', {
+        duration: 1000,
+     });
+
+
+
+    }, (error: any) => {
+      console.log(error)
+
+      this.matSnackBar.open("Login Unsuccessful ", ' ', {
+        duration: 1000,
+     });
 
     })
   }
