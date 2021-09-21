@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpService/http.service';
 
@@ -9,12 +10,26 @@ export class UserService {
   constructor(private httpService :HttpService) { }
 
   registerUser(requestdata:any){
-    return this.httpService.Post('user/userSignUp',requestdata)
+    console.log(requestdata);
+    return this.httpService.Post('/user/userSignUp',requestdata)
   }
-  // loginUser(requestdata: { email: string; password: string;}) {
 
-  //   return this.httpService.Post('/user/login',requestdata)
+  loginUser(requestdata:any) {
+    console.log(requestdata);
+   return this.httpService.Post('/user/login',requestdata)
 
-  // }
+  }
+  
+  forgotUser(requestdata : any){
+    console.log(requestdata);
+    return this.httpService.Post('/user/reset',requestdata)
+  }
+  
+  resetpasswordUser(requestdata : any, token:any){
+    console.log(requestdata);
+    return this.httpService.Post('/user/reset-password',requestdata)
+    
+  }
+
    
 }
