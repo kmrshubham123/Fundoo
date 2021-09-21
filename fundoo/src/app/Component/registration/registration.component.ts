@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../services/userService/user.service';
 
 
 
@@ -14,7 +15,8 @@ export class RegistrationComponent implements OnInit {
   registerForm! : FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder, private userService:UserService)  { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -25,6 +27,27 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: ['', Validators.required]
 
     });
+  }
+
+  onSubmit(){
+    console.log("onsubmit function is calling  " , this.registerForm.value);
+    let request ={
+      firstName: this.registerForm.value.firstName,
+      lastName:this.registerForm.value.lastName,
+      email:this.registerForm.value.email,
+      password:this.registerForm.value.password,
+      confirmPassword:this.registerForm.value.confirmPassword,
+      service:"advance"
+
+    }
+    console.log(request)
+    this.userService.registerUser(request).subscribe((response:any)=>{
+      console.log(response);
+      
+    }, (error:any) => {
+      console.log(error);
+      
+    })
   }
 
   // convenience getter for easy access to form fields

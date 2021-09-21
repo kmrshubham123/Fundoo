@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -29,7 +31,7 @@ import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatInputModule,
-    ReactiveFormsModule,FormsModule,FlexLayoutModule
+    ReactiveFormsModule,FormsModule,FlexLayoutModule,HttpClientModule,MatCheckboxModule
 
   ],
   providers: [],
