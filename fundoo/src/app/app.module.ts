@@ -15,7 +15,7 @@ import { ForgotPasswordComponent } from './Component/forgot-password/forgot-pass
 import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
-    ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule
+    ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule
 
   ],
   providers: [],
