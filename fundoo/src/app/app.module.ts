@@ -14,14 +14,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.component';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
-import {MatCheckboxModule} from '@angular/material/checkbox';
-
-=======
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
->>>>>>> User_API_Integration
-
+import{DashBoardComponent} from './Component/dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
@@ -29,19 +24,15 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RegistrationComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashBoardComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatInputModule,
-    ReactiveFormsModule,FormsModule,FlexLayoutModule,HttpClientModule,MatCheckboxModule
-=======
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
     ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule
->>>>>>> User_API_Integration
 
   ],
   providers: [],
