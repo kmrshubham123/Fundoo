@@ -20,7 +20,7 @@ token:any
     let httpAuthOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        
+        'Authorization': this.token
        
       })
     };
