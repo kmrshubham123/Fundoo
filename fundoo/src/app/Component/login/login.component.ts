@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/userService/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router'; //import from app-routing.ts
 
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService,private matSnackBar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService,private matSnackBar:MatSnackBar,
+               private router:Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -29,12 +31,15 @@ export class LoginComponent implements OnInit {
     console.log("onsubmit function is calling", this.loginForm.value);
     let request = {
       email: this.loginForm.value.email,
-      password: this.loginForm.value.password,
+      password: this.loginForm.value.password
 
     }
     console.log(request)
     this.userService.loginUser(request).subscribe((response: any) => {
       console.log(response)
+
+      //Dashboard Router setting
+      this.router.navigateByUrl('/dashboard')
 
       this.matSnackBar.open("Login Successful ", ' ', {
         duration: 1000,

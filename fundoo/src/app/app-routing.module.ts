@@ -5,13 +5,19 @@ import { RegistrationComponent } from './Component/registration/registration.com
 import { LoginComponent } from './Component/login/login.component';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.component';
+//import { DashBoardComponent } from './Component/dash-board/dash-board.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+
 
 
 const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
-  {path:'resetpassword/:token',component:ResetpasswordComponent}
+  {path:'resetpassword/:token',component:ResetpasswordComponent},
+  //{path:'dash-board',component:DashBoardComponent}
+  {path:'dashboard',component:DashboardComponent},
+  {path:'',redirectTo:"login",pathMatch:'full'}, //for redirect page 
 ];
 
 @NgModule({

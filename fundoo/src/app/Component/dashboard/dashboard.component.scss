@@ -1,0 +1,65 @@
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+  }
+  
+  
+  h1.app-name {
+    margin-left: 8px;
+  }
+  
+  .sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+
+//   search-bar
+.searchIcon{
+    border-radius: 8px;
+    width: 900px;
+    margin-left:3%;
+    outline: none;
+    border: 1px solid #f1f3f4;
+    background-color:  #f1f3f4;
+  
+}
+.search-icon,.searchInput{
+    border:0px;
+    background-color: #f1f3f4;
+}
+.search-icon,.searchInput:focus{
+ outline: none;
+}
+.sec-3{
+    margin-left: 30px;
+}
+.sec-4{
+    margin-left: 80px;
+}
+
+.mat-sidenav-container .mat-list-item{
+//    border:2px solid red;
+   padding:none;
+   background-color: none;
+    border-radius: 20px; //-----------------------
+   outline: none;
+
+}
+
+.main-sidenavbar .Notes:hover{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+}
+.main-sidenavbar .Notes:active{
+    background-color:pink;
+    border-radius: 20px;
+}
