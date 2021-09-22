@@ -1,0 +1,95 @@
+<div style="border: 2px solid #f1f3f4;"></div>
+<div class="main-container">
+    <mat-toolbar class="example-toolbar" style="background-color: white;">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="logo">
+            <img src="..\assets\keep_2020q4_48dp.png" width="42px" height="46px">
+        </div>
+        <h1 class="app-name">{{applicationName}}</h1>
+
+        <div class="searchIcon">
+            <button mat-icon-button class="search-icon">
+                <mat-icon matTooltip="Search">search</mat-icon>
+            </button>
+
+            <input class="searchInput" placeholder="search">
+        </div>
+
+
+        <div class="sec-3" fxLayout="row" fxLayoutGap="12px">
+            <div class="refresh">
+
+                <button mat-icon-button class="refresh">
+                    <mat-icon matTooltip="refresh">refresh</mat-icon>
+                </button>
+
+            </div>
+            <div class="list-view">
+                <button mat-icon-button>
+                   
+                    <span class="material-icons">splitscreen</span>
+                </button>
+            </div>
+            <div class="setting">
+                <button mat-icon-button>
+                    <span class="material-icons">settings</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="sec-4" fxLayout="row" fxLayoutGap="12px">
+
+            <div class="Fundoo-app">
+                <button mat-icon-button>
+                    <span class="material-icons">apps</span>
+                </button>
+            </div>
+            <div class="account-img">
+                <button mat-icon-button>
+                    <img src="..\assets\round_account_circle_black_24dp.png">
+                </button>
+
+            </div>
+
+        </div>
+       
+    </mat-toolbar> <div style="border: 2px solid #f1f3f4;"></div>
+
+
+    <mat-sidenav-container class="sidenav-container">
+
+        <mat-sidenav #snav mode="side">
+            <mat-nav-list>
+                <div class="main-sidenavbar" style="padding: 25px;">
+                    <div fxLayoutAlign="row" class="Notes" fxLayoutGap="20px">
+                        <img src="..\assets\sidenav-icons\lightbulb_black_24dp.svg" alt="">
+                        <a mat-list-item routerLink=".">Notes</a>
+                    </div>
+                    <div fxLayoutAlign="row" class="Reminders" fxLayoutGap="20px">
+                        <img src="..\assets\sidenav-icons\notifications_none_black_24dp.svg" alt="">
+                        <a mat-list-item routerLink=".">Reminders</a>
+                    </div>
+                    <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px">
+                        <img src="..\assets\sidenav-icons\edit_black_24dp.svg" alt="">
+                        <a mat-list-item routerLink=".">Edit lables</a>
+                    </div>
+                    <div fxLayoutAlign="row" class="archive" fxLayoutGap="20px">
+                        <img src="..\assets\sidenav-icons\archive_black_24dp.svg" alt="">
+                        <a mat-list-item routerLink=".">Archive</a>
+                    </div>
+                    <div fxLayoutAlign="row" class="Bin" fxLayoutGap="20px">
+                        <img src="..\assets\sidenav-icons\delete_black_24dp.svg" alt="">
+                        <a mat-list-item routerLink=".">Bin</a>
+                    </div>
+                </div>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <!-- <mat-sidenav-content>
+        <p *ngFor="let content of fillerContent">{{content}}</p>
+      </mat-sidenav-content> -->
+    </mat-sidenav-container>
+</div>

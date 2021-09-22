@@ -16,7 +16,13 @@ import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import{DashBoardComponent} from './Component/dash-board/dash-board.component';
+
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +31,16 @@ import{DashBoardComponent} from './Component/dash-board/dash-board.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetpasswordComponent,
-    DashBoardComponent
+   
+    DashboardComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
-    ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule
+    ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule,
+   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule
 
   ],
   providers: [],
