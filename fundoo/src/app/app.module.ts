@@ -23,7 +23,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
-
+import { GetallnotesComponent } from './Component/getallnotes/getallnotes.component';
+import { TakenoteComponent } from './Component/takenote/takenote.component';
+import { DisplayComponent } from './Component/display/display.component';
+import { MatCardModule } from '@angular/material/card';
+import { IconsComponent } from './Component/icons/icons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,11 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     ForgotPasswordComponent,
     ResetpasswordComponent,
    
-    DashboardComponent
+    DashboardComponent,
+         GetallnotesComponent,
+         TakenoteComponent,
+         DisplayComponent,
+         IconsComponent
 
   ],
   imports: [
@@ -40,7 +48,7 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
     ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule,
-   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule
+   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule,MatCardModule
 
   ],
   providers: [],

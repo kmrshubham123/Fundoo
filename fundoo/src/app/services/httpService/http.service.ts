@@ -12,32 +12,44 @@ token:any
 //url = '/user/userSignUp'
   constructor(private http: HttpClient) { }
  
+  PostService( url: string= '' , payload: any, tokenRequired:boolean=false, httpOption:any){
 
-  Post( url: any , requestdata:any){
-    this.token=localStorage.getItem("token")
+    return this.http.post(url,payload,tokenRequired && httpOption);
 
-    let httpAuthOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.token
+  }
+  // Post( url: any , requestdata:any){
+  //   this.token=localStorage.getItem("token")
+
+  //   let httpAuthOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization': this.token
        
-      })
-    };
-    let FullUrl = this.BaseUrl + url
-    return this.http.post(FullUrl,requestdata)
+  //     })
+  //   };
+  //   let FullUrl = this.BaseUrl + url
+  //   return this.http.post(FullUrl,requestdata)
+
+  // }
+
+  GetService( url: string= '' , tokenRequired:boolean=false, httpOption:any){
+
+    return this.http.get(url,tokenRequired && httpOption);
 
   }
+  
+  PutService( url: string= '' , tokenRequired:boolean=false, httpOption:any){
 
-  Get(){
-
-  }
-  Update(){
-
-  }
-
-  Delete(){
+    return this.http.put(url,tokenRequired && httpOption);
 
   }
+  // Update(){
+
+  // }
+
+  // Delete(){
+
+  // }
 
 
 }
