@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { NoteService } from '../../services/noteservice/note.service';
 
 @Component({
   selector: 'app-icons',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
 
-  constructor() { }
+  @Input() notecard:any
+  constructor( private noteService:NoteService) { }
 
   ngOnInit(): void {
+  }
+
+  deleteNote(){
+    let req = {
+      noteIdList: [this.notecard.id],
+      isDeleted: false,
+    }
+    this.noteService.deleteNoteService(req).subscribe((response)=>{
+      console.log(response);
+      
+    })
+    console.log();
+    
   }
 
 }

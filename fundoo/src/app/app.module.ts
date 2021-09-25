@@ -16,8 +16,6 @@ import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,6 +26,10 @@ import { TakenoteComponent } from './Component/takenote/takenote.component';
 import { DisplayComponent } from './Component/display/display.component';
 import { MatCardModule } from '@angular/material/card';
 import { IconsComponent } from './Component/icons/icons.component';
+import { AuthguradserviceService } from './services/authguradservice/authguradservice.service'
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdatenoteComponent } from './Component/updatenote/updatenote.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { IconsComponent } from './Component/icons/icons.component';
          GetallnotesComponent,
          TakenoteComponent,
          DisplayComponent,
-         IconsComponent
+         IconsComponent,
+         UpdatenoteComponent
 
   ],
   imports: [
@@ -48,10 +51,12 @@ import { IconsComponent } from './Component/icons/icons.component';
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
     ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule,
-   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule,MatCardModule
+   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule,MatCardModule,MatDialogModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguradserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

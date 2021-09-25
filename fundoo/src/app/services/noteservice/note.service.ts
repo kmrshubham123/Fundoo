@@ -43,4 +43,38 @@ token:any
     return this.httpService.GetService(this.BaseUrl + '/notes/getNotesList', true, httpAuthOptions);
 
   }
+   
+  // addNoteService(data: any){
+  //   let httpAuthOptions = {
+  //     headers:new HttpHeaders({
+  //       'Content-Type':'application/json',
+  //       'Authorization': this.token
+  //     })
+  //   };
+  //   return this.httpService.PostService(this.BaseUrl + '/notes/addNotes',data, true, httpAuthOptions);
+  // }
+
+
+  
+  updateNoteService(data: any){
+    
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.PostService(this.BaseUrl + '/notes/updateNotes',data, true, httpAuthOptions);
+  }
+
+  deleteNoteService(data: any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.PostService(this.BaseUrl + '/notes/deleteForeverNotes',data, true, httpAuthOptions);
+  }
+
 }
