@@ -7,7 +7,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: white;
   }
   
   
@@ -19,8 +18,8 @@
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
+    background-color: white;
   }
-  
 
 //   search-bar
 .searchIcon{
@@ -30,7 +29,6 @@
     outline: none;
     border: 1px solid #f1f3f4;
     background-color:  #f1f3f4;
-  
 }
 .search-icon,.searchInput{
     border:0px;
@@ -45,7 +43,9 @@
 .sec-4{
     margin-left: 80px;
 }
-
+// .mat-sidenav{
+//     background-color: ;
+// }
 .mat-sidenav-container .mat-list-item{
 //    border:2px solid red;
    padding:none;
@@ -54,12 +54,57 @@
    outline: none;
 
 }
+.main-sidenavbar{
+    width: 250px;
+    padding: 0px 0px 0px 14px;
+}
 
+.main-sidenavbar .Notes,.Reminders,.Edit,.archive,.Bin{
+
+    width: 275px;
+    padding: 12px;
+
+}
+
+.main-sidenavbar .Reminders:hover{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+}
+.main-sidenavbar .Edit:hover{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+}
 .main-sidenavbar .Notes:hover{
     background-color: #f1f3f4;
     border-radius: 20px;
 }
+.main-sidenavbar .archive:hover{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+}
+.main-sidenavbar .Bin:hover{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+}
+
+
+.main-sidenavbar .Reminders:active{
+    background-color: pink;
+    border-radius: 20px;
+}
+.main-sidenavbar .Edit:active{
+    background-color: pink;
+    border-radius: 20px;
+}
 .main-sidenavbar .Notes:active{
-    background-color:pink;
+    background-color: pink;
+    border-radius: 20px;
+}
+.main-sidenavbar .archive:active{
+    background-color: pink;
+    border-radius: 20px;
+}
+.main-sidenavbar .Bin:active{
+    background-color: pink;
     border-radius: 20px;
 }

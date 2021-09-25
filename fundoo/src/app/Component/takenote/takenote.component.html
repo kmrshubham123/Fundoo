@@ -1,14 +1,53 @@
-<div fxLayout="row" fxLayoutAlign="center center">
+<!-- <div fxLayout="row" fxLayoutAlign="center center">
 
     <mat-card style="width:400px;">
         <div (click)="onClick()" *ngIf="!show||show" >
           Title
         </div>
         <div *ngIf="show">
-            <textarea type="text" class="text">Take a note...</textarea>
+          <input matInput class="textfile" placeholder="Take a Note...." id="takeNote">
           <app-icons></app-icons>
           <div (click)="createNote()">close</div>
         </div>
-      
     </mat-card>
+</div> -->
+
+<div class="main-container" fxLayoutAlign="center center">
+
+  <mat-card *ngIf="!show" (click)="onClick()">
+    
+    <div class="input-bar">
+
+      <input autofocus matInput placeholder="Take a note.." type="text" />
+    
+    </div>
+  </mat-card>
+
+    <mat-card *ngIf="show">
+
+        <div fxLayout="column" fxLayoutGap="10px">
+
+            <textarea matInput placeholder="Title" [(ngModel)]="title" ></textarea>
+
+
+              <div fxLayout="column" fxLayoutGap="10px">
+
+                <div>
+
+                  <textarea matInput placeholder="Take a note..." [(ngModel)]="description"></textarea>
+
+                  </div>
+              </div>
+
+              <div fxLayout="row">
+
+                <app-icons></app-icons>
+
+                <button class="close" mat-button (click)="onClose()">Close</button>
+        
+              </div>
+        </div>
+    </mat-card>
+
 </div>
+
