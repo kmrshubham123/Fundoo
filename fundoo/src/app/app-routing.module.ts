@@ -8,6 +8,9 @@ import { ResetpasswordComponent } from './Component/resetpassword/resetpassword.
 //import { DashBoardComponent } from './Component/dash-board/dash-board.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { GetallnotesComponent } from './Component/getallnotes/getallnotes.component';
+import { AuthenticationGuard } from './authenticationguard/authentication.guard';
+import { ArchiveComponent } from './Component/archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
 
 
 
@@ -19,9 +22,11 @@ const routes: Routes = [
   {path:'resetpassword/:token',component:ResetpasswordComponent},
   //{path:'dash-board',component:DashBoardComponent}
   {path:'',redirectTo:"login",pathMatch:'full'}, //for redirect page 
-  {path:'dashboard',component:DashboardComponent,
+  {path:'dashboard',component:DashboardComponent, canActivate:[AuthenticationGuard],
 children:[
-  {path:'note',component:GetallnotesComponent}
+  {path:'note',component:GetallnotesComponent},
+  {path:'archive',component:ArchiveComponent},
+  {path:'trash',component:TrashComponent}
 ]}
   
   

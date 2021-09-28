@@ -30,6 +30,18 @@ token:any
     };
     return this.httpService.PostService(this.BaseUrl + '/notes/addNotes',data, true, httpAuthOptions);
 
+
+  }
+
+  getAllArchiveNote(){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.GetService(this.BaseUrl + '/notes/getArchiveNotesList', true, httpAuthOptions);
+
   }
 
 
@@ -76,5 +88,33 @@ token:any
     };
     return this.httpService.PostService(this.BaseUrl + '/notes/deleteForeverNotes',data, true, httpAuthOptions);
   }
+
+  changeColorService(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    console.log(data);
+    console.log(httpAuthOptions);
+    
+    return this.httpService.PostService(this.BaseUrl+'/notes/changesColorNotes',data,true, httpAuthOptions);
+  }
+
+
+  // archiveNote(note: Object) {
+  //   let httpAuthOptions = {
+  //     headers:new HttpHeaders({
+  //       'Content-Type':'application/json',
+  //       'Authorization': this.token
+  //     })
+      
+      
+  //   };
+    
+  //   return this.httpService.PostService(this.BaseUrl + 'notes/archiveNotes', note, true, httpAuthOptions);
+  // }
+ 
 
 }
