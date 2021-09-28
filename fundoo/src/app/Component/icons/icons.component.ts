@@ -14,20 +14,23 @@ export class IconsComponent implements OnInit {
   // @Output() unarchive: EventEmitter<any> = new EventEmitter();
 
   @Output() color: EventEmitter<any> = new EventEmitter();
- 
+
+  isArchived = false;
+  isDeleted=false;
 
 
-  constructor(private noteService: NoteService,private matSnackBar:MatSnackBar,) { }
+
+  constructor(private noteService: NoteService, private matSnackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
   }
 
-  deleteNote() {
+  foreverdeleteNote() {
     let req = {
       noteIdList: [this.notecard.id],
       isDeleted: false,
     }
-    this.noteService.deleteNoteService(req).subscribe((response) => {
+    this.noteService.foreverdeleteNoteService(req).subscribe((response) => {
       console.log(response);
 
     })
@@ -36,7 +39,7 @@ export class IconsComponent implements OnInit {
   }
 
   // colorlense
- 
+
 
   colors: Array<any> = [
     { code: '#ffffff', name: 'white' },
@@ -52,30 +55,65 @@ export class IconsComponent implements OnInit {
     { code: '#E2A76F', name: 'brown' },
     { code: '#D3D3D3', name: 'grey' },
   ];
-  setColor(color: any){
+  setColor(color: any) {
     this.notecard.color = color;
-    console.log('color',color);
+    console.log('color', color);
     let data = {
       color: color,
       noteIdList: [this.notecard.id],
     }
     console.log(data);
     this.noteService.changeColorService(data).subscribe(
-      (response:any)=>{ 
+      (response: any) => {
         // this.getNotes.emit(color)
-        console.log('Response of setColour',response);
-        this.matSnackBar.open('Background color Changed','',{duration:2000,})
+        console.log('Response of setColour', response);
+        this.matSnackBar.open('Background color Changed', '', { duration: 2000, })
       },
-      (error:any) => {
-        this.matSnackBar.open('Error occured ','try Again',{duration:2000,})
+      (error: any) => {
+        this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000, })
       }
-      );
-   }
-  // archiveNote() {
-  //   this.archive.emit();
-  // }
-  // unArchiveNote() {
-  //   this.unarchive.emit();
-  // }
+    );
+  }
+
+
+
+
+  archive() {
+    console.log("Archive note");
+    let data = {
+      noteIdList: [this.notecard.id],
+      isArchived: this.isArchived,
+    }
+    console.log(data)
+    this.noteService.ArchiveNoteService(data).subscribe((response: any) => {
+      console.log('response archieve', response);
+      this.matSnackBar.open('archieve suscessed', '', { duration: 2000, })
+
+    }, (error: any) => {
+      this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000, })
+    })
+
+  }
+
+  trash(){
+    console.log("Trash note");
+    let data = {
+     
+      noteIdList: [this.notecard.id],
+      isDeleted: this.isDeleted,
+    }
+    console.log(data)
+    this.noteService.TrashNoteService(data).subscribe((response:any)=>{
+      console.log('response Trash', response);
+      this.matSnackBar.open('Note Bin','',{duration:2000, })
+    },(error:any)=>{
+      console.log(error);
+      this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000, })
+      
+    })
+  }
+
+
+
 
 }

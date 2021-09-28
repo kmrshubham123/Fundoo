@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from '../../services/noteservice/note.service';
+
 
 @Component({
   selector: 'app-trash',
@@ -6,10 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
-
-  constructor() { }
+  NoteList=[]
+  constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
+    this. getTrash()
   }
+  // getTrash(){
+  //   console.log("Trash Notes");
+  //   this.noteService.getRequest("note/gettrashnotes").subscribe(
+  //     (response: any) => {
+  //       this.notes = response;
+  //       console.log(response);
+  //     }
+  //   );
+  // }
 
+  getTrash(){
+    console.log("Trash Notes");
+    this.noteService.getTrashNoteService().subscribe((response:any)=>{
+      console.log('NoteList Trash ', response);
+
+      this.NoteList=response.data.data;
+      this.NoteList.reverse()
+      console.log('noteList Trash' ,this.NoteList)
+
+    },(error:any)=>{
+      console.log(error);
+      
+    })
+    
+  }
 }

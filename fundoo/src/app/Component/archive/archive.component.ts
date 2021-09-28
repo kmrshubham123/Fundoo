@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from '../../services/noteservice/note.service';
 
+
 @Component({
   selector: 'app-archive',
   templateUrl: './archive.component.html',
@@ -19,12 +20,12 @@ export class ArchiveComponent implements OnInit {
 
   getAllArchive() {
 
-    this.noteService.getAllArchiveNote().subscribe((response: any) => {
+    this.noteService.getAllArchiveNoteService().subscribe((response: any) => {
       console.log(response);
       
       this.NoteList=response.data.data;
       this.NoteList.reverse()
-      console.log("noteList",this.NoteList)
+      console.log('noteList Archive' ,this.NoteList)
     },
       error => {
         console.log(error);
