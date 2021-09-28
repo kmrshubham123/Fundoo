@@ -1,11 +1,19 @@
-<div>
-    <div>
-        <input [(ngModel)]="title">
+<div class="main-container">
+    <div class="title" fxLayout="row">
+        <input [(ngModel)]="title" placeholder="Title">
+        <button mat-icon-button><img src="..\assets\takenote\push_pin_black_24dp.svg"></button>
     </div>
-    <div>
-        <input [(ngModel)]="description">
+    <br>
+    <div class="description">
+        <input [(ngModel)]="description" placeholder="Note">
     </div>
-    <div (click)="updateNotes()">
+    <br>
+    <app-icons></app-icons>
+
+    <div class="closebtn">
+        <button mat-button (click)="updateNotes()" id="close" style="margin-top: -39px;" fxLayout="row"> Close</button>
+    </div>
+    <!-- <div (click)="updateNotes()">
        close
-    </div>
+    </div> -->
 </div>

@@ -1,0 +1,18 @@
+
+input {
+    border: 0px;
+    width: 440px;
+}
+input:focus {
+    outline: none;
+}
+.closebtn{
+    display: flex;
+    justify-content: flex-end;
+}
+.title input{
+    font-size: 20px;
+}
+.description input{
+    font-size: 14px;
+}

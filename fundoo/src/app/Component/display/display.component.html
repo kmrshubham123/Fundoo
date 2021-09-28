@@ -1,5 +1,6 @@
 <div class="display-cards" fxLayout="row wrap" fxLayoutGap="20px" >
-<mat-card style="width:600px; height:600px" *ngFor="let note of NoteArray" style="background-color: pink; border-radius: 10px;">
+<mat-card *ngFor="let note of NoteArray" 
+[style.background]="note?.color" >
     <div (click)="openDialog(note)">
    {{note.title}}
     </div>

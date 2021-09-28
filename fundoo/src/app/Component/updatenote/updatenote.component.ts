@@ -40,9 +40,6 @@ export class UpdatenoteComponent implements OnInit {
     this.noteService.updateNoteService(request).subscribe((result)=>{
       console.log(result);
       this.dialogRef.close();
-      
-
-
     })
   }
 

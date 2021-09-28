@@ -66,23 +66,23 @@
                 <div class="main-sidenavbar" >
                     <div fxLayoutAlign="row" class="Notes" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\lightbulb_black_24dp.svg" alt="">
-                        <div class= "side-text" mat-list-item routerLink=".">Notes</div>
+                        <div fxHide.xs class= "side-text" mat-list-item routerLink="/dashboard/note">Notes</div>
                     </div>
                     <div fxLayoutAlign="row" class="Reminders" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\notifications_none_black_24dp.svg" alt="">
-                        <div mat-list-item routerLink=".">Reminders</div>
+                        <div fxHide.xs mat-list-item routerLink=".">Reminders</div>
                     </div>
                     <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\edit_black_24dp.svg" alt="">
-                        <div mat-list-item routerLink=".">Edit lables</div>
+                        <div  fxHide.xs mat-list-item routerLink=".">Edit lables</div>
                     </div>
                     <div fxLayoutAlign="row" class="archive" fxLayoutGap="20px">
-                        <img src="..\assets\sidenav-icons\archive_black_24dp.svg" alt="">
-                        <div mat-list-item routerLink=".">Archive</div>
+                        <img  src="..\assets\sidenav-icons\archive_black_24dp.svg" alt="">
+                        <div fxHide.xs mat-list-item  routerLink="/dashboard/archive">Archive</div>
                     </div>
                     <div fxLayoutAlign="row" class="Bin" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\delete_black_24dp.svg" alt="">
-                        <div mat-list-item routerLink=".">Bin</div>
+                        <div fxHide.xs mat-list-item routerLink="/dashboard/trash">Bin</div>
                     </div>
                 </div>
             </mat-nav-list>
