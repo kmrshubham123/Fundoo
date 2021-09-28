@@ -1,17 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit ,Output} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
-
+import { NoteService } from '../../services/noteservice/note.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private noteService: NoteService,
+              private matSnackBar:MatSnackBar) {}
 
   @Input() NoteArray: any;
-  
+
+ 
 
   ngOnInit(){
     console.log(this.NoteArray)
@@ -19,7 +23,7 @@ export class DisplayComponent implements OnInit {
   
   openDialog(notecard: any): void {
     const dialogRef = this.dialog.open(UpdatenoteComponent, {
-      width: '350px',
+      width: '550px',
       data: notecard
     });
 
@@ -28,5 +32,40 @@ export class DisplayComponent implements OnInit {
 
     });
   }
+
+  // setColor(color: any){
+    
+  //   console.log('color',color);
+  //   let data={
+  //     id: this.NoteArray['id'],
+  //     color: color,
+  //   };
+
+  //   this.noteService.changeColor(data).subscribe(
+  //     (response:any)=>{ 
+
+  //       console.log('Response of setColour',response);
+        
+  //     });
+
+    
+  // }
+  // setColor(color: any) {
+  //   console.log('Color', color);
+  //   let req = {
+  //            color: color,
+  //         noteIdList: [this.notecard.id],
+      
+  //   };
+  //   console.log('notecolordata',req);
+    
+  //   this.noteService.changeColorService(req).subscribe((response) => {
+  //     console.log('setColor Respose', response);
+      
+  //   });
+
+
+  // }
+
 
 }

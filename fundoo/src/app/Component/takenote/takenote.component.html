@@ -1,16 +1,4 @@
-<!-- <div fxLayout="row" fxLayoutAlign="center center">
-
-    <mat-card style="width:400px;">
-        <div (click)="onClick()" *ngIf="!show||show" >
-          Title
-        </div>
-        <div *ngIf="show">
-          <input matInput class="textfile" placeholder="Take a Note...." id="takeNote">
-          <app-icons></app-icons>
-          <div (click)="createNote()">close</div>
-        </div>
-    </mat-card>
-</div> -->
+<!-- 
 
 <div class="main-container" fxLayoutAlign="center center">
 
@@ -49,5 +37,39 @@
         </div>
     </mat-card>
 
-</div>
+</div> -->
 
+<div class="container" fxLayout="row" fxFlex.sm="60%" fxFlex.xs="40%">
+  <mat-card (click)="onClick()" *ngIf="!show" class="matcard" style="height:43px;" fxLayout="row"  fxLayoutAlign="center center" Flex.sm="270px" fxFlex.xs="250px" >
+       <input matInput class="searchBar" placeholder="Take a note..."  id="takeNote" fxLayout="row" fxFlex.sm="150px" fxFlex.xs="100px"> 
+       <div  fxLayout="row" fxLayoutAlign="end end" fxFlex.sm="120px" fxFlex.xs="100px" >
+          <button mat-icon-button>
+          <!-- <mat-icon matTooltip="New List">check_box</mat-icon> -->
+          <img src="..\assets\takenote\check_box_black_24dp.svg">
+          </button>
+          <button mat-icon-button>
+            <img src="..\assets\takenote\brush_black_24dp.svg">
+          </button>
+          <button mat-icon-button>
+            <img src="..\assets\takenote\insert_photo_black_24dp.svg">
+          </button>   
+      </div>
+  </mat-card>
+
+  <mat-card *ngIf="show" class="matcard1">
+    <!-- <br> -->
+    <div data-text="Take a Note" contenteditable="true" fxLayout="row"  fxLayoutAlign="center center">
+        <textarea id="title"  type="text" [(ngModel)]="title" matInput  id="title" class="input" placeholder="Title" ></textarea>
+        <button mat-icon-button><img src="..\assets\takenote\push_pin_black_24dp.svg"></button>
+    </div>
+    <br>
+    <!-- <div data-text="Take a Note" contenteditable="true" fxLayout="row"  fxLayoutAlign="center center"> -->
+        <textarea type="text"  id="description"  [(ngModel)]="description" matInput  class="input" placeholder="Take a note..."></textarea>
+    <!-- </div> -->
+    <br>
+     <app-icons></app-icons>
+     <div class="closebtn">
+        <button  mat-button (click)="onClose()" id="close" style="margin-top: -39px;"> Close</button>
+      </div>
+</mat-card>    
+</div>

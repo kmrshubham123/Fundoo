@@ -23,9 +23,9 @@ export class TakenoteComponent implements OnInit {
   }
 
   onClose() {
-
+    this.show=false;
     let data = {
-
+     
       title: this.title,
       description: this.description
     };
@@ -44,21 +44,21 @@ export class TakenoteComponent implements OnInit {
     );
   }
 
-  createNote() {
-    let request = {
-      title: 'this a testing note',
-      description: 'this is a test description'
-    }
-    this.noteService.createNotes(request).subscribe((response) => {
-      console.log(response);
+  // createNote() {
+  //   let request = {
+  //     title: 'this a testing note',
+  //     description: 'this is a test description'
+  //   }
+  //   this.noteService.createNotes(request).subscribe((response) => {
+  //     console.log(response);
 
-      this.createNoteRefreshEvent.emit(response.status.details);
-      let message = response
+  //     this.createNoteRefreshEvent.emit(response.status.details);
+  //     let message = response
 
-    }, error => {
-      console.log(error);
-    })
+  //   }, error => {
+  //     console.log(error);
+  //   })
 
-    this.show = false
-  }
+  //   this.show = false
+  // }
 }

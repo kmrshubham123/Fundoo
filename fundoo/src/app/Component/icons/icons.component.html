@@ -1,12 +1,56 @@
-<div class="maincontainer" >
-    <div class="take-icon" fxLayoutGap="15px">
-    <img src="..\assets\takenote\add_alert_black_24dp.svg">
-    <img src="..\assets\takenote\person_add_alt_black_24dp.svg">
-    <img src="..\assets\takenote\palette_black_24dp.svg">
-    <img src="..\assets\takenote\insert_photo_black_24dp.svg">
-    <img (click)="deleteNote()" src="..\assets\sidenav-icons\archive_black_24dp.svg">
-    <img src="..\assets\takenote\more_vert_black_24dp.svg">
+<div class="maincontainer">
+  <div class="take-icon" fxLayoutGap="15px">
+    <button mat-icon-button><img src="..\assets\takenote\add_alert_black_24dp.svg"></button>
+    <button mat-icon-button><img src="..\assets\takenote\person_add_alt_black_24dp.svg"></button>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="colorMenu">
+      <img src="..\assets\takenote\palette_black_24dp.svg"></button>
+    <mat-menu #colorMenu="matMenu">
+      <div class="color-pop">
+        <div *ngFor="let color of colors" class="colorButtton">
+          <button mat-mini-fab [style.background]="color?.code" (click)="setColor(color.code)"></button>
+        </div>
+
+      </div>
+    </mat-menu>
+
+
+
+
+
+
+
+
+    <button mat-icon-button><img src="..\assets\takenote\insert_photo_black_24dp.svg"></button>
+
+    <!-- <archive-btn> -->
+    <!-- <button mat-icon-button *ngIf="notecard.isArchived !== true" class="">
+      <img (click)="archiveNote()" src="..\assets\sidenav-icons\archive_black_24dp.svg">
+    </button>
+
+     <button mat-icon-button *ngIf="notecard.isArchived === true" class="">
+      <img (click)="unArchiveNote()" src="..\assets\takenote\unarchive_black_24dp.svg">
+    </button> -->
+
+
+
+
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <img src="..\assets\takenote\more_vert_black_24dp.svg">
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon><img src="..\assets\takenote\delete_forever_black_24dp.svg" alt=""></mat-icon>
+        <span (click)="deleteNote()">Forever Delete</span>
+      </button>
+    </mat-menu>
+
+
     <!-- <img src="..\assets\takenote\undo_black_24dp.svg">
     <img src="..\assets\takenote\redo_black_24dp.svg"> -->
     <!-- <button >close</button> -->
+  </div>
 </div>

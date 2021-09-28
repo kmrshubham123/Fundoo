@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem('token',response.id)
       //Dashboard Router setting
-      this.router.navigateByUrl('/dashboard')
+      this.router.navigateByUrl('/dashboard/note')
 
       this.matSnackBar.open("Login Successful ", ' ', {
         duration: 1000,

@@ -29,6 +29,11 @@ import { IconsComponent } from './Component/icons/icons.component';
 import { AuthguradserviceService } from './services/authguradservice/authguradservice.service'
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdatenoteComponent } from './Component/updatenote/updatenote.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ArchiveComponent } from './Component/archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,10 @@ import { UpdatenoteComponent } from './Component/updatenote/updatenote.component
          TakenoteComponent,
          DisplayComponent,
          IconsComponent,
-         UpdatenoteComponent
+         UpdatenoteComponent,
+         ArchiveComponent,
+         TrashComponent,
+         
 
   ],
   imports: [
@@ -51,7 +59,7 @@ import { UpdatenoteComponent } from './Component/updatenote/updatenote.component
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
     ReactiveFormsModule, FormsModule, FlexLayoutModule, HttpClientModule, MatCheckboxModule,MatSnackBarModule,
-   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule,MatCardModule,MatDialogModule
+   MatSidenavModule,MatToolbarModule,MatIconModule,MatListModule,MatCardModule,MatDialogModule,MatMenuModule
 
   ],
   providers: [
