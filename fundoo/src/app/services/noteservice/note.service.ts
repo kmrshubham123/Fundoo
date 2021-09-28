@@ -33,7 +33,17 @@ token:any
 
   }
 
-  getAllArchiveNote(){
+  ArchiveNoteService(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.PostService(this.BaseUrl + '/notes/getArchiveNotesList',data, true, httpAuthOptions);
+
+  }
+  getAllArchiveNoteService(){
     let httpAuthOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
@@ -56,15 +66,7 @@ token:any
 
   }
    
-  // addNoteService(data: any){
-  //   let httpAuthOptions = {
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json',
-  //       'Authorization': this.token
-  //     })
-  //   };
-  //   return this.httpService.PostService(this.BaseUrl + '/notes/addNotes',data, true, httpAuthOptions);
-  // }
+
 
 
   
@@ -79,7 +81,7 @@ token:any
     return this.httpService.PostService(this.BaseUrl + '/notes/updateNotes',data, true, httpAuthOptions);
   }
 
-  deleteNoteService(data: any){
+  foreverdeleteNoteService(data: any){
     let httpAuthOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
@@ -103,18 +105,31 @@ token:any
   }
 
 
-  // archiveNote(note: Object) {
-  //   let httpAuthOptions = {
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json',
-  //       'Authorization': this.token
-  //     })
-      
-      
-  //   };
+  getTrashNoteService(){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.GetService(this.BaseUrl + '/notes/getTrashNotesList', true, httpAuthOptions);
+
+  }
+
+
+  TrashNoteService(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    console.log(data);
+    console.log(httpAuthOptions);
     
-  //   return this.httpService.PostService(this.BaseUrl + 'notes/archiveNotes', note, true, httpAuthOptions);
-  // }
+    return this.httpService.PostService(this.BaseUrl+'/notes/trashNotes',data,true, httpAuthOptions);
+  }
+
  
 
 }

@@ -25,11 +25,11 @@
     <button mat-icon-button><img src="..\assets\takenote\insert_photo_black_24dp.svg"></button>
 
     <!-- <archive-btn> -->
-    <!-- <button mat-icon-button *ngIf="notecard.isArchived !== true" class="">
-      <img (click)="archiveNote()" src="..\assets\sidenav-icons\archive_black_24dp.svg">
+    <button mat-icon-button *ngIf="notecard.isArchived !== true"  class="">
+      <img  (click)="archive()"  src="..\assets\sidenav-icons\archive_black_24dp.svg">
     </button>
 
-     <button mat-icon-button *ngIf="notecard.isArchived === true" class="">
+     <!-- <button mat-icon-button *ngIf="notecard.isArchived === true" class="">
       <img (click)="unArchiveNote()" src="..\assets\takenote\unarchive_black_24dp.svg">
     </button> -->
 
@@ -44,7 +44,11 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <mat-icon><img src="..\assets\takenote\delete_forever_black_24dp.svg" alt=""></mat-icon>
-        <span (click)="deleteNote()">Forever Delete</span>
+        <span (click)="foreverdeleteNote()">Delete Forever</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon><img src="..\assets\sidenav-icons\delete_black_24dp.svg" alt=""></mat-icon>
+        <span (click)="trash()">Delete note</span>
       </button>
     </mat-menu>
 
