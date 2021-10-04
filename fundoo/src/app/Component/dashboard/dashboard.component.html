@@ -1,6 +1,6 @@
 <div style="border: 2px solid #f1f3f4;"></div>
 <div class="main-container">
-    <mat-toolbar class="example-toolbar" style="background-color: white;">
+    <mat-toolbar class="example-toolbar" style="background-color: white;" >
         <button mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -72,13 +72,20 @@
                         <img src="..\assets\sidenav-icons\notifications_none_black_24dp.svg" alt="">
                         <div fxHide.xs mat-list-item routerLink=".">Reminders</div>
                     </div>
+
+                    <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px" *ngFor = "let note of labelList">
+                        <img src="..\assets\Menu\label_black_24dp.svg"alt="">
+                        <div fxHide.xs mat-list-item>{{note.label}}</div>
+                    </div>
+
+
                     <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\edit_black_24dp.svg" alt="">
-                        <div  fxHide.xs mat-list-item routerLink=".">Edit lables</div>
+                        <div (click)="openEditLables()" fxHide.xs mat-list-item>Edit lables</div>
                     </div>
                     <div fxLayoutAlign="row" class="archive" fxLayoutGap="20px">
                         <img  src="..\assets\sidenav-icons\archive_black_24dp.svg" alt="">
-                        <div fxHide.xs mat-list-item  routerLink="/dashboard/archive">Archive</div>
+                        <div  fxHide.xs mat-list-item  routerLink="/dashboard/archive">Archive</div>
                     </div>
                     <div fxLayoutAlign="row" class="Bin" fxLayoutGap="20px">
                         <img src="..\assets\sidenav-icons\delete_black_24dp.svg" alt="">

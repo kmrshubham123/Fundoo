@@ -24,14 +24,14 @@
 
     <button mat-icon-button><img src="..\assets\takenote\insert_photo_black_24dp.svg"></button>
 
-    <!-- <archive-btn> -->
-    <button mat-icon-button *ngIf="notecard.isArchived !== true"  class="">
-      <img  (click)="archive()"  src="..\assets\sidenav-icons\archive_black_24dp.svg">
+
+    <button mat-icon-button *ngIf="!notecard.isArchived" class="">
+      <img (click)="archive()" src="..\assets\sidenav-icons\archive_black_24dp.svg">
     </button>
 
-     <!-- <button mat-icon-button *ngIf="notecard.isArchived === true" class="">
-      <img (click)="unArchiveNote()" src="..\assets\takenote\unarchive_black_24dp.svg">
-    </button> -->
+    <button mat-icon-button *ngIf="notecard.isArchived" class="">
+      <img (click)="unArchive()" src="..\assets\takenote\unarchive_black_24dp.svg">
+    </button>
 
 
 
@@ -42,15 +42,39 @@
       <img src="..\assets\takenote\more_vert_black_24dp.svg">
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item *ngIf="notecard.isDeleted">
         <mat-icon><img src="..\assets\takenote\delete_forever_black_24dp.svg" alt=""></mat-icon>
         <span (click)="foreverdeleteNote()">Delete Forever</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item *ngIf="notecard.isDeleted">
+        <mat-icon><img src="..\assets\label\restore_from_trash_black_24dp.svg" alt=""></mat-icon>
+        <span (click)="restoreTrash()">Restore</span>
+      </button>
+
+
+      <button mat-menu-item *ngIf="!notecard.isDeleted">
         <mat-icon><img src="..\assets\sidenav-icons\delete_black_24dp.svg" alt=""></mat-icon>
         <span (click)="trash()">Delete note</span>
       </button>
+
+      <button mat-menu-item [matMenuTriggerFor]="subMenu">
+        <mat-icon><img src="..\assets\Menu\label_black_24dp.svg" alt=""></mat-icon>
+        <span>Add Label</span>
+      </button>
     </mat-menu>
+
+
+    <mat-menu #subMenu="matMenu">
+      <div style="margin-left:10px;" class="labelNote">LabelNote</div>
+      <div mat-menu-item style="margin-bottom: -8px; margin-left: -11px;">
+        <input matInput type="text" placeholder="Create label">
+      </div>
+    </mat-menu>
+
+
+
+
+
 
 
     <!-- <img src="..\assets\takenote\undo_black_24dp.svg">

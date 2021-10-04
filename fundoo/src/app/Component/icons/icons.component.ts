@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NoteService } from '../../services/noteservice/note.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataService } from '../../services/dataService/data.service';
 
 @Component({
   selector: 'app-icons',
@@ -10,17 +11,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class IconsComponent implements OnInit {
   @Input() notecard: any;
-  // @Output() archive: EventEmitter<any> = new EventEmitter();
-  // @Output() unarchive: EventEmitter<any> = new EventEmitter();
 
-  @Output() color: EventEmitter<any> = new EventEmitter();
+
+  @Output() colorChange: EventEmitter<any> = new EventEmitter();
+  @Output() onArchiveChange:EventEmitter<any> = new EventEmitter();
+  // @Output() noteTrash = new EventEmitter();
 
   isArchived = false;
-  isDeleted=false;
+  isDeleted = false;
+ 
 
 
 
-  constructor(private noteService: NoteService, private matSnackBar: MatSnackBar,) { }
+  constructor(private noteService: NoteService,private daataService:DataService, private matSnackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
   }
@@ -80,9 +83,10 @@ export class IconsComponent implements OnInit {
 
   archive() {
     console.log("Archive note");
+   
     let data = {
       noteIdList: [this.notecard.id],
-      isArchived: this.isArchived,
+      isArchived: !this.isArchived,
     }
     console.log(data)
     this.noteService.ArchiveNoteService(data).subscribe((response: any) => {
@@ -92,24 +96,60 @@ export class IconsComponent implements OnInit {
     }, (error: any) => {
       this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000, })
     })
+   
+  }
+  unArchive() {
+    console.log("UnArchive note");
+    let data = {
+      noteIdList: [this.notecard.id],
+      isArchived: this.isArchived,
+    }
+    console.log(data);
+    this.noteService.ArchiveNoteService(data).subscribe(response => {
+      console.log('response unarchive ', response);
+      this.onArchiveChange.emit();
+      this.matSnackBar.open('note unarchive succesfully', '', { duration: 2000 });
+    }, error => {
+      console.log('error ', error);
+      this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000 });
+    })
+
 
   }
 
-  trash(){
+
+  trash() {
     console.log("Trash note");
     let data = {
-     
+
       noteIdList: [this.notecard.id],
-      isDeleted: this.isDeleted,
+      isDeleted: !this.isDeleted,
     }
     console.log(data)
-    this.noteService.TrashNoteService(data).subscribe((response:any)=>{
+    this.noteService.TrashNoteService(data).subscribe((response: any) => {
       console.log('response Trash', response);
-      this.matSnackBar.open('Note Bin','',{duration:2000, })
-    },(error:any)=>{
+      this.matSnackBar.open('Note Bin', '', { duration: 2000, })
+    }, (error: any) => {
       console.log(error);
       this.matSnackBar.open('Error occured ', 'try Again', { duration: 2000, })
-      
+
+    })
+  }
+
+
+  restoreTrash() {
+    console.log("Restore Trash note");
+    let data = {
+      noteIdList: [this.notecard.id],
+      isDeleted: false,
+    }
+    console.log(data);
+    this.noteService.TrashNoteService(data).subscribe(response => {
+      console.log('response ', response);
+  
+      this.matSnackBar.open('Restore succesfully', '', { duration: 2000 });
+    }, error => {
+      console.log('error ', error);
     })
   }
 

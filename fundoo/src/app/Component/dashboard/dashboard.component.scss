@@ -1,3 +1,4 @@
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -68,7 +69,7 @@ mat-sidenav {
 }
 
 .main-sidenavbar {
-
+    cursor: pointer;
     padding: 0px 0px 0px 14px;
 }
 
@@ -129,7 +130,9 @@ mat-sidenav {
     border-radius: 20px;
 }
 
-.main-sidenavbar .Bin:active {
+.main-sidenavbar .Bin:focus {
     background-color: pink;
     border-radius: 20px;
 }
+
+

@@ -9,10 +9,12 @@ export class HttpService {
 BaseUrl = environment.BaseUrl
 token:any
 
-//url = '/user/userSignUp'
+
   constructor(private http: HttpClient) { }
  
   PostService( url: string= '' , payload: any, tokenRequired:boolean=false, httpOption:any){
+    console.log(url);
+    
 
     return this.http.post(url,payload,tokenRequired && httpOption);
 
@@ -43,13 +45,19 @@ token:any
     return this.http.put(url,tokenRequired && httpOption);
 
   }
-  // Update(){
+  
+  DeleteService(url:string='', payload: any,  tokenRequired:boolean=false, httpOption:any) {
+    console.log(url);
+    return this.http.delete(url, tokenRequired && httpOption)
+  }
+  
+  
+  // UpdateService( url: string= '' , tokenRequired:boolean=false, httpOption:any){
+
+  //   return this.http.post(url,tokenRequired && httpOption);
 
   // }
 
-  // Delete(){
-
-  // }
 
 
 }

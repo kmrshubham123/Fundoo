@@ -32,6 +32,7 @@ import { UpdatenoteComponent } from './Component/updatenote/updatenote.component
 import {MatMenuModule} from '@angular/material/menu';
 import { ArchiveComponent } from './Component/archive/archive.component';
 import { TrashComponent } from './Component/trash/trash.component';
+import { EditlabelComponent } from './Component/editlabel/editlabel.component';
 
 
 
@@ -51,6 +52,7 @@ import { TrashComponent } from './Component/trash/trash.component';
          UpdatenoteComponent,
          ArchiveComponent,
          TrashComponent,
+         EditlabelComponent,
          
 
   ],

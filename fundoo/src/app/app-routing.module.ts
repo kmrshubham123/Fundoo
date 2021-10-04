@@ -12,6 +12,8 @@ import { AuthenticationGuard } from './authenticationguard/authentication.guard'
 import { ArchiveComponent } from './Component/archive/archive.component';
 import { TrashComponent } from './Component/trash/trash.component';
 
+import { EditlabelComponent } from './Component/editlabel/editlabel.component';
+
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
 children:[
   {path:'note',component:GetallnotesComponent},
   {path:'archive',component:ArchiveComponent},
-  {path:'trash',component:TrashComponent}
+  {path:'trash',component:TrashComponent},
+  
+  {path:'editlabel',component:EditlabelComponent}
 ]}
   
   

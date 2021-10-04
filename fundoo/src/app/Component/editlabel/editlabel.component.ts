@@ -13,7 +13,7 @@ export class EditlabelComponent implements OnInit {
   labelList:any
   move:any
   isDeleted=false
- 
+
 
 
 
@@ -91,9 +91,10 @@ export class EditlabelComponent implements OnInit {
   updateLabel(labelList:any){
     console.log("Update_Labels_notes");
     let data={
-      labelList:labelList,
-      isDeleted:false,
-      // userId: localStorage.getItem('userId')
+      id:labelList.id,
+      label:labelList.label,
+     
+      userId: localStorage.getItem('userId')
     }
     console.log("update data ",data)
     this.noteService.updateLablesService(data).subscribe((response:any)=>{

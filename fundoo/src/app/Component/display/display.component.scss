@@ -13,6 +13,11 @@
 .mat-card app-icons:hover{
     visibility: visible;
 }
+.mat-card{
+    max-width: 550px;
+    max-height: 650px;
+
+}
 // .mat-card app-icons:focus-visible{
 //     visibility: visible;
 // }

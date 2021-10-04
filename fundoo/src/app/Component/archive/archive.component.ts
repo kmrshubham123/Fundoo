@@ -32,7 +32,7 @@ export class ArchiveComponent implements OnInit {
 
       }
     )
-
+     
   }
 
 }
