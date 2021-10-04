@@ -32,40 +32,5 @@ export class DisplayComponent implements OnInit {
 
     });
   }
-
-  // setColor(color: any){
-    
-  //   console.log('color',color);
-  //   let data={
-  //     id: this.NoteArray['id'],
-  //     color: color,
-  //   };
-
-  //   this.noteService.changeColor(data).subscribe(
-  //     (response:any)=>{ 
-
-  //       console.log('Response of setColour',response);
-        
-  //     });
-
-    
-  // }
-  // setColor(color: any) {
-  //   console.log('Color', color);
-  //   let req = {
-  //            color: color,
-  //         noteIdList: [this.notecard.id],
-      
-  //   };
-  //   console.log('notecolordata',req);
-    
-  //   this.noteService.changeColorService(req).subscribe((response) => {
-  //     console.log('setColor Respose', response);
-      
-  //   });
-
-
-  // }
-
-
+  
 }

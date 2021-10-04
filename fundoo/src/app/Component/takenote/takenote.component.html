@@ -1,46 +1,6 @@
-<!-- 
-
-<div class="main-container" fxLayoutAlign="center center">
-
-  <mat-card *ngIf="!show" (click)="onClick()">
-    
-    <div class="input-bar">
-
-      <input autofocus matInput placeholder="Take a note.." type="text" />
-    
-    </div>
-  </mat-card>
-
-    <mat-card *ngIf="show">
-
-        <div fxLayout="column" fxLayoutGap="10px">
-
-            <textarea matInput placeholder="Title" [(ngModel)]="title" ></textarea>
-
-
-              <div fxLayout="column" fxLayoutGap="10px">
-
-                <div>
-
-                  <textarea matInput placeholder="Take a note..." [(ngModel)]="description"></textarea>
-
-                  </div>
-              </div>
-
-              <div fxLayout="row">
-
-                <app-icons></app-icons>
-
-                <button class="close" mat-button (click)="onClose()">Close</button>
-        
-              </div>
-        </div>
-    </mat-card>
-
-</div> -->
 
 <div class="container" fxLayout="row" fxFlex.sm="60%" fxFlex.xs="40%">
-  <mat-card (click)="onClick()" *ngIf="!show" class="matcard" style="height:43px;" fxLayout="row"  fxLayoutAlign="center center" Flex.sm="270px" fxFlex.xs="250px" >
+  <mat-card  (click)="onClick()" *ngIf="!show" class="matcard" style="height:43px;" fxLayout="row"  fxLayoutAlign="center center" Flex.sm="270px" fxFlex.xs="250px" >
        <input matInput class="searchBar" placeholder="Take a note..."  id="takeNote" fxLayout="row" fxFlex.sm="150px" fxFlex.xs="100px"> 
        <div  fxLayout="row" fxLayoutAlign="end end" fxFlex.sm="120px" fxFlex.xs="100px" >
           <button mat-icon-button>

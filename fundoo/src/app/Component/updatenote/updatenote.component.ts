@@ -41,6 +41,8 @@ export class UpdatenoteComponent implements OnInit {
       console.log(result);
       this.dialogRef.close();
     })
+ 
   }
+
 
 }

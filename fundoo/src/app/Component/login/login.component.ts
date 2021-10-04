@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       console.log(response)
 
       localStorage.setItem('token',response.id)
+      localStorage.setItem('userId',response.userId)
       //Dashboard Router setting
       this.router.navigateByUrl('/dashboard/note')
 

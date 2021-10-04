@@ -1,0 +1,56 @@
+<div class="main-container">
+
+    <div class="title">
+        <h3>Edit labels</h3>
+    </div>
+
+    <div class="menu" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+
+        <div class="add-menu" *ngIf="show" (click)="onOpen()">
+            <button mat-icon-button style="margin-left:-43.5px;"><img src="..\assets\label\add_black_24dp.svg"></button>
+        </div>
+
+        <div class="clear-menu" *ngIf="!show" (click)="onClose()">
+            <button mat-icon-button><img src="..\assets\label\clear_black_24dp.svg"></button>
+        </div>
+
+
+        <div class="text">
+            <input matInput [(ngModel)]="label" class="text" placeholder="Create new label"
+                style="border:0px; outline: none;">
+        </div>
+
+        <div class="check" *ngIf="!show" (click)="onCreate()">
+            <button mat-icon-button><img src="..\assets\label\done_black_24dp.svg"></button>
+        </div>
+
+    </div>
+    <div class="box-icons" fxLayoutAlign="row" fxLayoutAlign="center center" class="Edit" *ngFor="let note of labelList"
+        style="padding-top:30px;">
+        <div class="iconsleft" (mouseover)="move=true" (mouseout)="move=false">
+            <button *ngIf="!move" mat-icon-button><img mat-icon-button src="..\assets\Menu\label_black_24dp.svg"
+                    alt=""></button>
+            <button *ngIf="move" (click)="deleteLabel(note)" mat-icon-button><img
+                    src="..\assets\sidenav-icons\delete_black_24dp.svg" alt=""></button>
+        </div>
+        <!-- <div style="width: 170px; padding: 3px;" mat-list-item>{{note.label}}</div> -->
+        <input style="width: 170px; " matInput type="text" [(ngModel)]="note.label" style="border:0px; outline: none;">
+        <div class="icon-right">
+            <button (click)="updateLabel(note)" mat-icon-button><img mat-icon-button
+                    src="..\assets\sidenav-icons\edit_black_24dp.svg"></button>
+            <!-- <button mat-icon-button><img mat-icon-button src="..\assets\label\done_black_24dp.svg"></button> -->
+        </div>
+    </div>
+
+
+
+</div>
+
+<br>
+<mat-divider></mat-divider>
+
+<div class="submit" fxLayout="row" fxLayoutAlign="end end" style="padding-top: 20px;">
+
+    <button mat-button mat-dialog-close>Done</button>
+
+</div>

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteService } from '../../services/noteservice/note.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataService } from '../../services/dataService/data.service';
 
 @Component({
   selector: 'app-takenote',
@@ -10,13 +11,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TakenoteComponent implements OnInit {
   title: any
   description: any
+  @Output() createNoteRefreshEvent = new EventEmitter<any>();
 
   show = false
-  constructor(private noteService: NoteService, private matSnackBar: MatSnackBar) { }
+  constructor(private noteService: NoteService, private matSnackBar: MatSnackBar,private dataService:DataService) { }
 
   ngOnInit() {
   }
-  @Output() createNoteRefreshEvent = new EventEmitter<any>();
+ 
 
   onClick() {
     this.show = true
@@ -42,23 +44,7 @@ export class TakenoteComponent implements OnInit {
         this.matSnackBar.open("Note not added !", 'Try Again', { duration: 3000, });
       }
     );
+  
   }
 
-  // createNote() {
-  //   let request = {
-  //     title: 'this a testing note',
-  //     description: 'this is a test description'
-  //   }
-  //   this.noteService.createNotes(request).subscribe((response) => {
-  //     console.log(response);
-
-  //     this.createNoteRefreshEvent.emit(response.status.details);
-  //     let message = response
-
-  //   }, error => {
-  //     console.log(error);
-  //   })
-
-  //   this.show = false
-  // }
 }

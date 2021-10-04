@@ -8,8 +8,8 @@ import { NoteService } from '../../services/noteservice/note.service';
 })
 export class GetallnotesComponent implements OnInit {
 
-  NoteList=[]
-
+  NoteList=[];
+  
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
@@ -18,11 +18,15 @@ export class GetallnotesComponent implements OnInit {
   }
 
   getAllNotes() {
+    let notesArchive = [];
+
 
     this.noteService.getAllNoteService().subscribe((response: any) => {
       console.log(response);
+
+      notesArchive = response.data.data;
+      this.NoteList= notesArchive.filter((data:any) => data.isArchived != true && data.isDeleted != true); //filter for archieve
       
-      this.NoteList=response.data.data;
       this.NoteList.reverse()
       console.log("noteList",this.NoteList)
     },
